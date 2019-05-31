@@ -1,11 +1,13 @@
 # db/seeds.rb
 puts 'Creating restaurants...'
-Restaurant.create!({
-  name: "Le Dindon en Laisse",
-  address: "18 Rue Beautreillis, 75004 Paris, France"
-})
-Restaurant.create!({
-  name: "Neuf et Voisins",
-  address: "Van Arteveldestraat 1, 1000 Brussels, Belgium"
-})
+100.times do
+  Restaurant.create!({
+    name: "Mos Burger",
+    address: "18 Meguro, 75004 Tokyo, Japan"
+  })
+  Restaurant.create!({
+    name: "Madhuban",
+    address: "Meguro 1, 1000 Tokyo, Japan"
+  })
+end
 puts 'Finished!'

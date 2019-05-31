@@ -1,0 +1,11 @@
+var reviewForm = document.querySelector('#new_review')
+<% if @review.errors.any? %>
+  var reviewPartial = "<%= j render 'reviews/form', restaurant: @restaurant, review: @review %>"
+  reviewForm.innerHTML = reviewPartial
+<% else %>
+  var reviewPartial = "<%= j render 'reviews/form', restaurant: @restaurant, review: Review.new %>"
+  reviewForm.innerHTML = reviewPartial
+  var reviews = document.getElementById('reviews');
+  var reviewPartial = "<%= j render 'reviews/show', review: @review %>"
+  reviews.insertAdjacentHTML('beforeend', reviewPartial);
+<% end %>
